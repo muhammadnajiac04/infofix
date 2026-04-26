@@ -2,17 +2,74 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import ServiceCards from '../../components/home/ServiceCards.astro';
 import RepairProcess from '../../components/home/RepairProcess.astro';
+
+const services = [
+  {
+    title: 'Laptop Repair',
+    description: 'Facing issues with your Laptop? From Screen replacements to battery problems, our staff of experts handles everything.',
+    icon: '/img/laptop-logo.png',
+    link: '/en/laptop-repair-qatar'
+  },
+  {
+    title: 'Mobile Phone Repair',
+    description: 'From broken screens to connectivity issues, we offer professional mobile phone repairs to have you back connected.',
+    icon: '/img/phone-logo.png',
+    link: '/en/mobile-repair-qatar'
+  },
+  {
+    title: 'iPad Repair',
+    description: 'Don\'t allow problems with the iPad to slow you down. We provide reliable and reasonably priced iPad repair solutions.',
+    icon: '/img/iphone-logo.png',
+    link: '/en/ipad-repair-qatar'
+  },
+  {
+    title: 'MacBook Repair',
+    description: 'Expert diagnostics and repairs for all Apple MacBook models. Quick turnaround times and genuine parts used.',
+    icon: '/img/laptop-logo.png',
+    link: '/en/macbook-repair-qatar'
+  }
+];
 ---
 
-<MainLayout
-  title="Expert Laptop Repair Qatar | AstroFix Service"
-  description="Professional laptop repair in Qatar. Screen replacement, motherboard repair, and data recovery."
->
-  <div class="pt-32 container mx-auto px-6 text-center">
-    <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">Expert Repair Services</h1>
-    <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-12">Fast, reliable, and professional repair services for all laptop brands.</p>
-  </div>
-  
-  <ServiceCards />
+<MainLayout title="Repairs | ScorpionFix Qatar">
+  <!-- Page Banner -->
+  <section class="bg-gray-100 pt-[100px] pb-12 border-b border-gray-200">
+    <div class="container mx-auto px-4 md:px-6">
+      <nav class="flex text-sm text-gray-500 mb-2" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center space-x-1 md:space-x-3">
+          <li class="inline-flex items-center">
+            <a href="/" class="hover:text-primary transition-colors">Home</a>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <svg class="w-4 h-4 text-gray-400 mx-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+              <span class="text-gray-700 font-medium">Repairs</span>
+            </div>
+          </li>
+        </ol>
+      </nav>
+      <h1 class="text-3xl md:text-4xl font-bold text-dark">Our Repairs</h1>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-white">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {services.map((service, index) => (
+          <a href={service.link} class="block bg-white border border-gray-100 rounded-lg shadow-sm hover:shadow-md transition-shadow h-full flex flex-col animate-fade-in-up" style={`animation-delay: ${index * 100}ms;`}>
+            <div class="p-6 pb-2">
+              <img src={service.icon} alt={service.title} class="w-full h-auto object-contain">
+            </div>
+            <div class="p-6 pt-2 flex-grow">
+              <h3 class="text-xl font-bold text-dark mb-3 hover:text-primary transition-colors">{service.title}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">{service.description}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <RepairProcess />
+  <ServiceCards />
 </MainLayout>

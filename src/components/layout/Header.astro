@@ -1,22 +1,30 @@
 ---
-import StickyNav from './StickyNav.astro';
 ---
-<header class="fixed w-full z-40 transition-all duration-300 backdrop-blur-md bg-dark/80 border-b border-borderGlass">
-  <div class="container mx-auto px-6 h-20 flex items-center justify-between">
-    <a href="/" class="text-2xl font-bold text-white flex items-center gap-2">
-      <span class="text-primary">Astro</span>Fix
+<header class="fixed w-full z-40 transition-all duration-300 bg-white border-b border-gray-200">
+  <div class="container mx-auto px-4 md:px-6 h-[76px] flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/en" class="flex-shrink-0">
+      <img src="/img/logo.svg" width="94" alt="Logo" class="max-w-full h-auto">
     </a>
-    <StickyNav />
-    <div class="hidden md:flex gap-4">
-      <a href="tel:+974XXXXXXXX" class="text-gray-300 hover:text-white font-medium flex items-center gap-2">
-        <span>📞</span> +974 XXXXXXXX
-      </a>
-      <a href="/repair" class="bg-primary hover:bg-indigo-500 text-white px-6 py-2 rounded-xl transition-all shadow-[0_0_15px_rgba(79,70,229,0.45)]">
-        Book Repair
-      </a>
-    </div>
-    <button class="md:hidden text-white p-2 focus:outline-none" aria-label="Menu">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+    
+    <!-- Desktop Navigation -->
+    <nav class="hidden lg:flex items-center gap-6 ml-auto">
+      <a href="/" class="text-dark hover:text-primary transition-colors font-medium">Home</a>
+      <a href="/about" class="text-dark hover:text-primary transition-colors font-medium">About Us</a>
+      <a href="/repair" class="text-dark hover:text-primary transition-colors font-medium">Repairs</a>
+      <a href="/sales" class="text-dark hover:text-primary transition-colors font-medium">Sales</a>
+      <a href="/contact" class="text-dark hover:text-primary transition-colors font-medium">Contact Us</a>
+      
+      <div class="flex items-center gap-2 ml-4 pl-4 border-l border-gray-300">
+        <a href="/" class="text-primary font-bold">en</a>
+        <span class="text-gray-300">|</span>
+        <a href="/ar" class="text-dark hover:text-primary font-medium">ar</a>
+      </div>
+    </nav>
+    
+    <!-- Mobile Toggle -->
+    <button class="lg:hidden text-gray-500 border border-gray-300 rounded px-3 py-1 focus:outline-none focus:ring-2 focus:ring-primary">
+      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h16a1 1 0 110 2H4a1 1 0 01-1-1zm0 7a1 1 0 011-1h16a1 1 0 110 2H4a1 1 0 01-1-1zm0 7a1 1 0 011-1h16a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
     </button>
   </div>
 </header>

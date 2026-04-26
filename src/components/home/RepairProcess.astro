@@ -1,45 +1,51 @@
 ---
 const steps = [
   {
-    number: '01',
-    title: 'Book Device Pickup / Visit',
-    description: 'Schedule a pickup or visit our service center in Doha.'
+    number: '1',
+    title: 'Book Your Repair',
+    description: 'You can call our staff directly or book your free consultation on our website.'
   },
   {
-    number: '02',
-    title: 'Free Diagnosis',
-    description: 'Our experts will assess the damage and provide a free quote.'
+    number: '2',
+    title: 'Diagnosis & Assessment',
+    description: 'To find the issue, our professionals quickly and thoroughly examine.'
   },
   {
-    number: '03',
-    title: 'Fast Repair',
-    description: 'Approval received? We fix your device using genuine parts.'
+    number: '3',
+    title: 'Quick & Effective Repair',
+    description: 'Once the issue has been identified, we quickly and effectively carry out the repairs to guarantee little downtime.'
   },
   {
-    number: '04',
-    title: 'QA Testing & Delivery',
-    description: 'Rigorous testing before we return your device in perfect condition.'
+    number: '4',
+    title: 'Quality Assurance & Delivery',
+    description: 'After the repair is finished, we examine your gadget to make sure it is operating as it should then send it back to you.'
   }
 ];
 ---
-<section class="py-24 bg-dark relative">
-  <div class="container mx-auto px-6">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Our 4-Step Repair Process</h2>
-      <p class="text-gray-400 max-w-2xl mx-auto text-lg">Transparent, fast, and reliable. Track your repair status online anytime.</p>
+<section class="py-12 md:py-16 bg-white overflow-hidden">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="mb-10 text-center md:text-left">
+      <h6 class="text-sm font-semibold mb-2 flex items-center justify-center md:justify-start text-dark animate-fade-in">
+        Our Repairing Process
+        <img src="/img/group-1.png" alt="Procedure Icon" class="ml-2 w-5 h-5">
+      </h6>
+      <h2 class="text-3xl md:text-5xl font-bold text-dark animate-fade-in-up">
+        Simple, Straight Forward Repair Process
+      </h2>
+      <p class="text-gray-600 mt-4 max-w-3xl animate-fade-in-up" style="animation-delay: 100ms;">
+        Our repair procedure is meant to be flawless, quick, and open to providing you the greatest experience:
+      </p>
     </div>
     
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-      <!-- Connection line -->
-      <div class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-borderGlass z-0"></div>
-      
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {steps.map((step, index) => (
-        <div class="relative z-10 flex flex-col items-center text-center">
-          <div class="w-24 h-24 rounded-full bg-dark border-4 border-primary flex items-center justify-center text-3xl font-black text-white mb-6 shadow-[0_0_20px_rgba(79,70,229,0.4)]">
+        <div class="relative bg-light rounded-[30px] p-6 pt-10 mt-6 shadow-sm hover:shadow-md transition-shadow animate-fade-in-up" style={`animation-delay: ${index * 100}ms;`}>
+          <!-- Floating Step Number -->
+          <div class="absolute -top-6 left-6 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white text-xl font-bold shadow-md">
             {step.number}
           </div>
-          <h3 class="text-xl font-bold text-white mb-3">{step.title}</h3>
-          <p class="text-gray-400 text-sm">{step.description}</p>
+          <h5 class="text-lg font-bold text-dark mb-3">{step.title}</h5>
+          <p class="text-gray-600 text-sm leading-relaxed">{step.description}</p>
         </div>
       ))}
     </div>

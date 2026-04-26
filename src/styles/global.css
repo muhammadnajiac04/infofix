@@ -1,27 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  --color-dark: #111827;
-  --color-primary: #4F46E5;
-  --color-secondary: #818CF8;
-  --color-glass: rgba(255,255,255,0.08);
-  --color-borderGlass: rgba(255,255,255,0.12);
-  --blur-xs: 2px;
-  --shadow-neon: 0 0 15px rgba(79,70,229,0.45);
-  --radius-xl2: 1.25rem;
+  --color-primary: #FFA700; /* Exact ScorpionFix Orange */
+  --color-dark: #000000;
+  --color-light: #f8f9fa; /* Bootstrap bg-light */
+  --color-secondary: #6c757d;
+  --color-border-light: #e5e7eb;
 }
 
 @layer utilities {
-  .glass {
-    background-color: var(--color-glass);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+  .section-padding {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 }
 
 html, body {
-  background-color: var(--color-dark);
-  color: #F9FAFB; /* text-gray-50 */
+  background-color: #ffffff;
+  color: #000000;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif; /* Bootstrap default */
   margin: 0;
   padding: 0;
 }

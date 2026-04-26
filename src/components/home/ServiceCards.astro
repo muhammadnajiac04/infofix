@@ -1,47 +1,45 @@
 ---
-const services = [
+const features = [
   {
-    title: 'Screen Replacement',
-    description: 'Fast, high-quality screen replacements for all laptop models.',
-    icon: '/images/icons/screen-replacement.png',
-    link: '/repair/screen-replacement'
+    title: 'Certified Technicians',
+    description: 'Our team of experts guarantees your gadget is in capable hands by specializing in iPad, laptop, and mobile diagnostics and repairs.',
+    icon: '/img/certified.svg'
   },
   {
-    title: 'Motherboard Repair',
-    description: 'Expert diagnostics and repair for complex motherboard issues.',
-    icon: '/images/icons/motherboard.png',
-    link: '/repair/motherboard-repair'
+    title: 'Rapid Turnaround',
+    description: 'Usually finished in 24 to 48 hours, most repairs allow you to resume your regular activities without interruption.',
+    icon: '/img/rapid.svg'
   },
   {
-    title: 'Chip-Level Repair',
-    description: 'Micro-soldering and advanced circuit board restorations.',
-    icon: '/images/icons/chip-repair.png',
-    link: '/repair/chip-level-repair'
+    title: 'Transparent & Affordable Pricing',
+    description: 'We value honest service free from any hidden costs. You pay just for the repairs you really need—nothing more.',
+    icon: '/img/pricing.svg'
   },
   {
-    title: 'Data Recovery',
-    description: 'Secure retrieval of lost or corrupted files from damaged drives.',
-    icon: '/images/icons/data-recovery.png',
-    link: '/repair/data-recovery'
+    title: 'Proven Expertise',
+    description: 'Having years of expertise, we have developed a reliable, professional, and precise reputation.',
+    icon: '/img/expertise.svg'
   }
 ];
 ---
-<section class="py-24 bg-gray-900 relative">
-  <div class="container mx-auto px-6">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Our Expert Services</h2>
-      <p class="text-gray-400 max-w-2xl mx-auto text-lg">We handle everything from simple screen replacements to complex chip-level restorations.</p>
+<section class="py-12 md:py-16 bg-light">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="mb-8">
+      <h6 class="text-sm font-semibold mb-2 flex items-center text-dark animate-fade-in">
+        Why Choose Us
+        <img src="/img/group-1.png" alt="Procedure Icon" class="ml-2 w-5 h-5">
+      </h6>
     </div>
     
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      {services.map(service => (
-        <a href={service.link} class="group block glass p-8 rounded-2xl border border-borderGlass hover:border-primary/50 transition-all hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(79,70,229,0.3)]">
-          <div class="w-16 h-16 mb-6 rounded-xl bg-gray-800 flex items-center justify-center p-3 group-hover:scale-110 transition-transform">
-            <img src={service.icon} alt={service.title} class="w-full h-full object-contain" width="64" height="64" />
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {features.map((feature, index) => (
+        <div class="bg-white border border-gray-100 rounded-lg shadow-sm hover:shadow-md transition-shadow p-6 flex flex-col animate-fade-in-up" style={`animation-delay: ${index * 100}ms;`}>
+          <div class="flex items-center gap-3 mb-4">
+            <img src={feature.icon} alt="Feature Icon" class="w-10 h-10 object-contain">
+            <h3 class="text-lg font-bold text-dark leading-tight">{feature.title}</h3>
           </div>
-          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">{service.title}</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">{service.description}</p>
-        </a>
+          <p class="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
+        </div>
       ))}
     </div>
   </div>

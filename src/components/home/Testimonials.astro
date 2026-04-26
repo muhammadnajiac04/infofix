@@ -20,22 +20,23 @@ const testimonials = [
   }
 ];
 ---
-<section class="py-24 bg-gray-900">
+<section class="section-padding bg-gray-bg border-b border-border-light">
   <div class="container mx-auto px-6">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">What Our Clients Say</h2>
-      <p class="text-gray-400">Trusted by hundreds of individuals and businesses across Qatar.</p>
+    <div class="text-center mb-16 max-w-2xl mx-auto">
+      <p class="text-primary font-bold uppercase tracking-widest mb-2 text-sm">Our Happy Customers</p>
+      <h2 class="text-3xl md:text-5xl font-black text-dark mb-4 tracking-tight">Hear from them</h2>
+      <p class="text-gray-600">Trusted by hundreds of individuals and businesses across Qatar.</p>
     </div>
     
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       {testimonials.map(t => (
-        <div class="glass p-8 rounded-3xl border border-borderGlass relative">
-          <div class="text-primary text-4xl font-serif absolute top-4 left-6">"</div>
-          <p class="text-gray-300 italic mb-6 mt-4 relative z-10">{t.text}</p>
-          <div class="flex items-center justify-between">
+        <div class="bg-white p-8 rounded-xl border border-border-light shadow-sm relative hover:shadow-lg transition-all">
+          <div class="text-primary text-5xl font-serif absolute top-4 left-6 opacity-20">"</div>
+          <p class="text-gray-600 italic mb-6 mt-4 relative z-10 text-sm leading-relaxed">{t.text}</p>
+          <div class="flex items-center justify-between border-t border-border-light pt-4">
             <div>
-              <h4 class="text-white font-bold">{t.name}</h4>
-              <p class="text-gray-500 text-sm">{t.role}</p>
+              <h4 class="text-dark font-bold">{t.name}</h4>
+              <p class="text-gray-500 text-xs">{t.role}</p>
             </div>
             <div class="flex text-yellow-400">
               {Array.from({length: t.rating}).map(() => <span>★</span>)}

@@ -1,17 +1,138 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
+
+const products = [
+  {
+    id: 1,
+    name: "MacBook Pro M2 2023",
+    price: "4,500 QAR",
+    originalPrice: "5,200 QAR",
+    condition: "Refurbished - Like New",
+    specs: ["M2 Chip", "16GB RAM", "512GB SSD", "14-inch Display"],
+    image: "/img/hero-image-1.jpg",
+    badge: "Best Seller"
+  },
+  {
+    id: 2,
+    name: "Dell XPS 15 9520",
+    price: "3,800 QAR",
+    originalPrice: "4,600 QAR",
+    condition: "Refurbished - Excellent",
+    specs: ["Intel Core i7", "16GB RAM", "1TB SSD", "RTX 3050 Ti"],
+    image: "/img/hero-image-2.jpg",
+    badge: "Great Value"
+  },
+  {
+    id: 3,
+    name: "Lenovo ThinkPad X1 Carbon",
+    price: "3,200 QAR",
+    originalPrice: "4,000 QAR",
+    condition: "Refurbished - Very Good",
+    specs: ["Intel Core i5", "16GB RAM", "512GB SSD", "14-inch FHD"],
+    image: "/img/hero-image-3.jpg",
+    badge: ""
+  },
+  {
+    id: 4,
+    name: "ASUS ROG Zephyrus G14",
+    price: "4,100 QAR",
+    originalPrice: "4,800 QAR",
+    condition: "Refurbished - Excellent",
+    specs: ["AMD Ryzen 9", "16GB RAM", "1TB SSD", "RTX 3060"],
+    image: "/img/hero-image-4.jpg",
+    badge: "Gaming Focus"
+  }
+];
 ---
 
-<MainLayout
-  title="Buy Premium Laptops Qatar | AstroFix Sales"
-  description="Shop for high-performance gaming, business, and refurbished laptops in Qatar."
->
-  <div class="pt-32 pb-20 container mx-auto px-6 text-center">
-    <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">Laptop Sales</h1>
-    <p class="text-xl text-gray-400 max-w-2xl mx-auto">Explore our premium collection of gaming, business, and refurbished laptops.</p>
-    <div class="mt-16 glass p-12 rounded-3xl border border-borderGlass">
-      <h2 class="text-2xl font-bold text-white mb-4">Coming Soon</h2>
-      <p class="text-gray-400">Our online catalog is currently being updated. Please contact us on WhatsApp for our latest inventory and pricing.</p>
+<MainLayout title="Shop Laptops | ScorpionFix Qatar">
+  <!-- Page Banner -->
+  <section class="bg-gray-100 pt-[100px] pb-12 border-b border-gray-200">
+    <div class="container mx-auto px-4 md:px-6">
+      <nav class="flex text-sm text-gray-500 mb-2" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center space-x-1 md:space-x-3">
+          <li class="inline-flex items-center">
+            <a href="/" class="hover:text-primary transition-colors">Home</a>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <svg class="w-4 h-4 text-gray-400 mx-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+              <span class="text-gray-700 font-medium">Sales</span>
+            </div>
+          </li>
+        </ol>
+      </nav>
+      <h1 class="text-3xl md:text-4xl font-bold text-dark mb-4">Premium Refurbished Laptops</h1>
+      <p class="text-gray-600 max-w-2xl">Browse our curated selection of high-performance refurbished laptops. Each device passes a rigorous 50-point inspection by our certified technicians and includes a comprehensive warranty.</p>
     </div>
-  </div>
+  </section>
+
+  <!-- Products Grid -->
+  <section class="py-12 md:py-16 bg-white">
+    <div class="container mx-auto px-4 md:px-6">
+      
+      <!-- Filters (Visual Only) -->
+      <div class="flex flex-wrap items-center justify-between mb-8 pb-4 border-b border-gray-200 gap-4">
+        <div class="flex gap-2">
+          <button class="px-4 py-2 bg-primary text-white text-sm font-medium rounded">All</button>
+          <button class="px-4 py-2 bg-light text-dark text-sm font-medium rounded hover:bg-gray-200 transition-colors">Apple</button>
+          <button class="px-4 py-2 bg-light text-dark text-sm font-medium rounded hover:bg-gray-200 transition-colors">Dell</button>
+          <button class="px-4 py-2 bg-light text-dark text-sm font-medium rounded hover:bg-gray-200 transition-colors">Lenovo</button>
+          <button class="px-4 py-2 bg-light text-dark text-sm font-medium rounded hover:bg-gray-200 transition-colors">Gaming</button>
+        </div>
+        <div>
+          <select class="px-4 py-2 bg-white border border-gray-300 rounded text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-gray-700">
+            <option>Sort by: Featured</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+            <option>Newest Arrivals</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {products.map((product, index) => (
+          <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow relative flex flex-col animate-fade-in-up" style={`animation-delay: ${index * 100}ms;`}>
+            {product.badge && (
+              <div class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded">
+                {product.badge}
+              </div>
+            )}
+            <div class="h-48 bg-gray-50 flex items-center justify-center overflow-hidden p-4">
+              <img src={product.image} alt={product.name} class="max-h-full max-w-full object-contain mix-blend-multiply" />
+            </div>
+            
+            <div class="p-5 flex flex-col flex-grow">
+              <div class="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-2">
+                {product.condition}
+              </div>
+              <h3 class="text-lg font-bold text-dark mb-2 leading-tight">
+                {product.name}
+              </h3>
+              
+              <ul class="text-xs text-gray-600 mb-4 space-y-1 flex-grow">
+                {product.specs.map(spec => (
+                  <li class="flex items-center gap-2">
+                    <svg class="w-3 h-3 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    {spec}
+                  </li>
+                ))}
+              </ul>
+              
+              <div class="pt-4 border-t border-gray-100 flex items-end justify-between mt-auto">
+                <div>
+                  <span class="text-gray-400 text-sm line-through block mb-1">{product.originalPrice}</span>
+                  <span class="text-xl font-black text-dark block">{product.price}</span>
+                </div>
+                <button class="bg-primary hover:bg-orange-600 text-white p-2 rounded transition-colors" title="Inquire via WhatsApp">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M1.146 22.854L5.5 18.5h13a2 2 0 002-2V4a2 2 0 00-2-2H4a2 2 0 00-2 2v13.5l-2.854 2.854a.5.5 0 00.354.854h2zM3 4a1 1 0 011-1h14.5a1 1 0 011 1v13.5a1 1 0 01-1 1H5.207L3.5 19.207V4z"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
 </MainLayout>
