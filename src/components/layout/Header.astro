@@ -1,0 +1,22 @@
+---
+import StickyNav from './StickyNav.astro';
+---
+<header class="fixed w-full z-40 transition-all duration-300 backdrop-blur-md bg-dark/80 border-b border-borderGlass">
+  <div class="container mx-auto px-6 h-20 flex items-center justify-between">
+    <a href="/" class="text-2xl font-bold text-white flex items-center gap-2">
+      <span class="text-primary">Astro</span>Fix
+    </a>
+    <StickyNav />
+    <div class="hidden md:flex gap-4">
+      <a href="tel:+974XXXXXXXX" class="text-gray-300 hover:text-white font-medium flex items-center gap-2">
+        <span>📞</span> +974 XXXXXXXX
+      </a>
+      <a href="/repair" class="bg-primary hover:bg-indigo-500 text-white px-6 py-2 rounded-xl transition-all shadow-[0_0_15px_rgba(79,70,229,0.45)]">
+        Book Repair
+      </a>
+    </div>
+    <button class="md:hidden text-white p-2 focus:outline-none" aria-label="Menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+    </button>
+  </div>
+</header>

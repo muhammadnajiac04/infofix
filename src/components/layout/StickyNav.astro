@@ -1,0 +1,17 @@
+---
+const links = [
+  { name: 'Home', url: '/' },
+  { name: 'Sales', url: '/sales' },
+  { name: 'Repair', url: '/repair' },
+  { name: 'Brands', url: '/brands/dell' },
+  { name: 'About', url: '/about' },
+  { name: 'Contact', url: '/contact' },
+];
+---
+<nav class="hidden md:flex gap-6">
+  {links.map((link) => (
+    <a href={link.url} class="text-gray-300 hover:text-white transition-colors text-sm font-medium uppercase tracking-wider">
+      {link.name}
+    </a>
+  ))}
+</nav>

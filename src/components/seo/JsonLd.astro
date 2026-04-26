@@ -1,0 +1,24 @@
+---
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "AstroFix Laptop Repair Qatar",
+  "image": "https://astrofixqatar.example.com/images/logo.png",
+  "telephone": "+974XXXXXXXX",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Main Street",
+    "addressLocality": "Doha",
+    "addressCountry": "Qatar"
+  },
+  "areaServed": "Qatar",
+  "url": "https://astrofixqatar.example.com",
+  "priceRange": "$$",
+  "sameAs": [
+    "https://facebook.com/",
+    "https://instagram.com/"
+  ]
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

@@ -1,0 +1,27 @@
+---
+const brands = [
+  { name: 'Dell', logo: '/images/brands/dell.png' },
+  { name: 'HP', logo: '/images/brands/hp.png' },
+  { name: 'Apple', logo: '/images/brands/apple.png' },
+  { name: 'Lenovo', logo: '/images/brands/lenovo.png' },
+  { name: 'Asus', logo: '/images/brands/asus.png' },
+  { name: 'Acer', logo: '/images/brands/acer.png' }
+];
+---
+<section class="py-20 bg-dark">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-white mb-4">Brands We Specialize In</h2>
+      <p class="text-gray-400">Authorized and expert repair services for all major manufacturers.</p>
+    </div>
+    
+    <div class="flex flex-wrap justify-center gap-8 md:gap-12 opacity-70 hover:opacity-100 transition-opacity">
+      {brands.map(brand => (
+        <a href={`/brands/${brand.name.toLowerCase()}`} class="w-24 md:w-32 h-16 flex items-center justify-center grayscale hover:grayscale-0 hover:scale-110 transition-all">
+          <!-- Fallback text if image missing -->
+          <div class="text-2xl font-bold text-white/50 hover:text-white transition-colors uppercase tracking-widest bg-white/5 px-4 py-2 rounded-lg backdrop-blur-sm border border-white/10">{brand.name}</div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

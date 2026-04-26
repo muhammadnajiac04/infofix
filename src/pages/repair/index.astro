@@ -1,0 +1,18 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import ServiceCards from '../../components/home/ServiceCards.astro';
+import RepairProcess from '../../components/home/RepairProcess.astro';
+---
+
+<MainLayout
+  title="Expert Laptop Repair Qatar | AstroFix Service"
+  description="Professional laptop repair in Qatar. Screen replacement, motherboard repair, and data recovery."
+>
+  <div class="pt-32 container mx-auto px-6 text-center">
+    <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">Expert Repair Services</h1>
+    <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-12">Fast, reliable, and professional repair services for all laptop brands.</p>
+  </div>
+  
+  <ServiceCards />
+  <RepairProcess />
+</MainLayout>

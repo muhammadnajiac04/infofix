@@ -1,0 +1,47 @@
+---
+const steps = [
+  {
+    number: '01',
+    title: 'Book Device Pickup / Visit',
+    description: 'Schedule a pickup or visit our service center in Doha.'
+  },
+  {
+    number: '02',
+    title: 'Free Diagnosis',
+    description: 'Our experts will assess the damage and provide a free quote.'
+  },
+  {
+    number: '03',
+    title: 'Fast Repair',
+    description: 'Approval received? We fix your device using genuine parts.'
+  },
+  {
+    number: '04',
+    title: 'QA Testing & Delivery',
+    description: 'Rigorous testing before we return your device in perfect condition.'
+  }
+];
+---
+<section class="py-24 bg-dark relative">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Our 4-Step Repair Process</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto text-lg">Transparent, fast, and reliable. Track your repair status online anytime.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+      <!-- Connection line -->
+      <div class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-borderGlass z-0"></div>
+      
+      {steps.map((step, index) => (
+        <div class="relative z-10 flex flex-col items-center text-center">
+          <div class="w-24 h-24 rounded-full bg-dark border-4 border-primary flex items-center justify-center text-3xl font-black text-white mb-6 shadow-[0_0_20px_rgba(79,70,229,0.4)]">
+            {step.number}
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">{step.title}</h3>
+          <p class="text-gray-400 text-sm">{step.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

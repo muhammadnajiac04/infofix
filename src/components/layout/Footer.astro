@@ -1,0 +1,42 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="bg-gray-900 border-t border-borderGlass pt-16 pb-8">
+  <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+    <div>
+      <a href="/" class="text-2xl font-bold text-white flex items-center gap-2 mb-4">
+        <span class="text-primary">Astro</span>Fix
+      </a>
+      <p class="text-gray-400">Professional laptop sales & expert repair services in Qatar. We provide genuine parts and same-day diagnostics.</p>
+    </div>
+    <div>
+      <h3 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Services</h3>
+      <ul class="space-y-2 text-gray-400">
+        <li><a href="/repair/screen-replacement" class="hover:text-primary transition-colors">Screen Replacement</a></li>
+        <li><a href="/repair/motherboard-repair" class="hover:text-primary transition-colors">Motherboard Repair</a></li>
+        <li><a href="/repair/data-recovery" class="hover:text-primary transition-colors">Data Recovery</a></li>
+        <li><a href="/repair/chip-level-repair" class="hover:text-primary transition-colors">Chip Level Repair</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Quick Links</h3>
+      <ul class="space-y-2 text-gray-400">
+        <li><a href="/sales" class="hover:text-primary transition-colors">Buy Laptops</a></li>
+        <li><a href="/about" class="hover:text-primary transition-colors">About Us</a></li>
+        <li><a href="/contact" class="hover:text-primary transition-colors">Contact</a></li>
+        <li><a href="/faq" class="hover:text-primary transition-colors">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Contact</h3>
+      <ul class="space-y-2 text-gray-400">
+        <li>Doha, Qatar</li>
+        <li>+974 XXXXXXXX</li>
+        <li>support@astrofix.com</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container mx-auto px-6 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+    &copy; {year} AstroFix Qatar. All rights reserved.
+  </div>
+</footer>

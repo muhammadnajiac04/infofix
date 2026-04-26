@@ -1,0 +1,48 @@
+---
+const testimonials = [
+  {
+    name: 'Ahmed K.',
+    role: 'Business Owner',
+    text: 'AstroFix repaired my water-damaged MacBook in just 2 days when Apple told me I had to buy a new one. Highly recommended!',
+    rating: 5
+  },
+  {
+    name: 'Sarah M.',
+    role: 'Designer',
+    text: 'Replaced my Dell XPS screen the same day. The customer service was exceptional and the price was very reasonable.',
+    rating: 5
+  },
+  {
+    name: 'Omar H.',
+    role: 'Student',
+    text: 'Recovered all my university files from a dead hard drive. Absolutely saved my life! Best data recovery in Qatar.',
+    rating: 5
+  }
+];
+---
+<section class="py-24 bg-gray-900">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">What Our Clients Say</h2>
+      <p class="text-gray-400">Trusted by hundreds of individuals and businesses across Qatar.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {testimonials.map(t => (
+        <div class="glass p-8 rounded-3xl border border-borderGlass relative">
+          <div class="text-primary text-4xl font-serif absolute top-4 left-6">"</div>
+          <p class="text-gray-300 italic mb-6 mt-4 relative z-10">{t.text}</p>
+          <div class="flex items-center justify-between">
+            <div>
+              <h4 class="text-white font-bold">{t.name}</h4>
+              <p class="text-gray-500 text-sm">{t.role}</p>
+            </div>
+            <div class="flex text-yellow-400">
+              {Array.from({length: t.rating}).map(() => <span>★</span>)}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

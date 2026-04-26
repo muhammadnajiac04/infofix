@@ -1,0 +1,48 @@
+---
+const services = [
+  {
+    title: 'Screen Replacement',
+    description: 'Fast, high-quality screen replacements for all laptop models.',
+    icon: '/images/icons/screen-replacement.png',
+    link: '/repair/screen-replacement'
+  },
+  {
+    title: 'Motherboard Repair',
+    description: 'Expert diagnostics and repair for complex motherboard issues.',
+    icon: '/images/icons/motherboard.png',
+    link: '/repair/motherboard-repair'
+  },
+  {
+    title: 'Chip-Level Repair',
+    description: 'Micro-soldering and advanced circuit board restorations.',
+    icon: '/images/icons/chip-repair.png',
+    link: '/repair/chip-level-repair'
+  },
+  {
+    title: 'Data Recovery',
+    description: 'Secure retrieval of lost or corrupted files from damaged drives.',
+    icon: '/images/icons/data-recovery.png',
+    link: '/repair/data-recovery'
+  }
+];
+---
+<section class="py-24 bg-gray-900 relative">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Our Expert Services</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto text-lg">We handle everything from simple screen replacements to complex chip-level restorations.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {services.map(service => (
+        <a href={service.link} class="group block glass p-8 rounded-2xl border border-borderGlass hover:border-primary/50 transition-all hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(79,70,229,0.3)]">
+          <div class="w-16 h-16 mb-6 rounded-xl bg-gray-800 flex items-center justify-center p-3 group-hover:scale-110 transition-transform">
+            <img src={service.icon} alt={service.title} class="w-full h-full object-contain" width="64" height="64" />
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">{service.title}</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">{service.description}</p>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
