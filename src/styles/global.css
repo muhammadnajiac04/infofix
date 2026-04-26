@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #FFA700; /* Exact ScorpionFix Orange */
+  --color-primary: #4F46E5; /* Exact ScorpionFix Orange */
   --color-dark: #000000;
   --color-light: #f8f9fa; /* Bootstrap bg-light */
-  --color-secondary: #6c757d;
+  --color-secondary: #111827;
   --color-border-light: #e5e7eb;
 }
 
